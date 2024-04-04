@@ -22,9 +22,16 @@ def calculate_polynominal(x, cs) -> int:
     :param cs: integer list
     :return: integer result
     """
+    result = 0
+    exponent = len(cs) -1
+    for i in range(len(cs)):
+        coefficient = cs[i]
+        result = result + coefficient*pow(x,exponent)
+        exponent = exponent - 1
+    return result
 
-    return 0
 
-
-coefficients = [5, -2, 0, 6]
+coefficients = [2, 1]
 print(polynominal(coefficients))
+x = int(input("x값을 입력하세요 : "))
+print(calculate_polynominal(x,coefficients))
