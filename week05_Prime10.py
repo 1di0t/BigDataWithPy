@@ -14,10 +14,14 @@ def is_prime(k) -> bool:
                 return False
             i = i + 1
         return True
+empty =0
 
-#num1 = int(input("첫번째 숫자 입력 :\t"))
-#num2 = int(input("두번째 숫자 입력 :\t"))
-start_end_Number = input("시작값 끝값 입력 : ").split()
-for k in range(int(start_end_Number[0]),int(start_end_Number[1])+1):
-        if is_prime(k) == True:print(k, end='\t')
-
+start, end= map(int,input("시작값 끝값 : ").split())
+#start_end_Number = input("시작값 끝값 입력 : ").split()
+for k in range(start,end):
+        if is_prime(k) == True:
+            print(k, end='\t')
+            empty = empty + 1
+        if empty == 20:
+            print("\n")
+            empty =0
