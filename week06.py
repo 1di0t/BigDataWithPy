@@ -1,11 +1,15 @@
-beverage = ['Espresso','Compagina']
-prices = [2000,2500]
+#
+beverage = ['Espresso','Compagina','Lemonade']
+prices = [2000,2500,3900]
 total_Price = 0
-quantity = [0,0]
+quantity = [0,0,0]
 
 while True:
-    menu_num = int(input(f" 1) {beverage[0]} : {prices[0]} \n 2) {beverage[1]} : {prices[1]} \n {len(beverage)+1}) exit\n 메뉴를 입력하세요 :"))
-    if menu_num == 3:
+    menu_num = int(input(f"1) {beverage[0]} : {prices[0]} \n"
+                         f"2) {beverage[1]} : {prices[1]} \n"
+                         f"3) {beverage[2]} : {prices[2]} \n"
+                         f"{len(beverage)+1}) exit\n 메뉴를 입력하세요 :"))
+    if menu_num == len(beverage)+1:
         print("주문확정")
         break
     elif menu_num == 1:
@@ -16,8 +20,13 @@ while True:
         print(f"{beverage[1]} 주문완료")
         total_Price += prices[1]
         quantity[1] += 1
+    elif menu_num == 3:
+        print(f"{beverage[2]} 주문완료")
+        total_Price += prices[2]
+        quantity[2] += 1
 
 print(f"움료\t가격\t수량\t{'소계':>6}\n")
 for i in range(len(beverage)):
-    print(f"{beverage[i]}\t{prices[i]}\t{quantity[i]}\t{prices[i]*quantity[i]:>6}\n")
+    if quantity[i] != 0:
+        print(f"{beverage[i]}\t{prices[i]}\t{quantity[i]}\t{prices[i]*quantity[i]:>6}\n")
 print(f"최종 금액 {total_Price}")
