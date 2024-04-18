@@ -19,14 +19,21 @@ def select_menu(menu_num):
 
 while True:
     for i in range(len(beverage)):
-        print(f"{i + 1}) {beverage[i]} : {prices[i]} \n")
-    menu_num = int(input(f"{len(beverage) + 1}) exit\n 메뉴를 입력하세요 : "))
-
-    if menu_num == len(beverage) + 1:
+        print(f"{i + 1}) {beverage[i]:<15}  {prices[i]:>6}")
+    try:
+        menu_num = int(input(f"{len(beverage) + 1}) exit\n메뉴를 입력하세요 : "))
+    except:
+        print("숫자를 입력해주세요")
+        continue
+    
+    if 0 < menu_num > (len(beverage)+2):
+        print(f"{menu_num}은 존재하지 않는 메뉴입니다")
+    elif menu_num == len(beverage) + 1:
         print("주문확정")
         break
     else:
         select_menu(menu_num-1)
+
 
 print(f"움료\t가격\t수량\t{'소계':>6}\n")
 for i in range(len(beverage)):
