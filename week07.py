@@ -15,6 +15,12 @@ def select_menu(menu_num):
     print(f"{beverage[menu_num]} 주문완료")
     quantity[menu_num] += 1
     total_Price += prices[menu_num]
+def print_recipe():
+    print(f"움료\t가격\t수량\t{'소계':>6}\n")
+    for i in range(len(beverage)):
+        if quantity[i] != 0:
+            print(f"{beverage[i]}\t{prices[i]}\t{quantity[i]}\t{prices[i] * quantity[i]:>6}\n")
+    print(f"최종 금액 {total_Price}")
 
 
 while True:
@@ -34,9 +40,5 @@ while True:
     else:
         select_menu(menu_num-1)
 
+print_recipe()
 
-print(f"움료\t가격\t수량\t{'소계':>6}\n")
-for i in range(len(beverage)):
-    if quantity[i] != 0:
-        print(f"{beverage[i]}\t{prices[i]}\t{quantity[i]}\t{prices[i] * quantity[i]:>6}\n")
-print(f"최종 금액 {total_Price}")
