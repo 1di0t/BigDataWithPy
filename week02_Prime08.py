@@ -4,8 +4,9 @@ def is_prime(k) -> bool:
     :param k:소수인지 판별할 양의 수
     :return: If n is Prime :true, Not Prime : False
     """
-    is_prime_num = True
-    if k < 2 or k % 2 == 0:
+    if k == 2:
+        return True
+    elif k <= 1 or k % 2 == 0:
         return False
     else:
         i = 2
