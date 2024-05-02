@@ -1,20 +1,20 @@
-#
+#beverage =
 beverage = ['Espresso', 'Compagina', 'Lemonade']
 prices = [2000, 2500, 3900]
 total_Price = 0
 quantity = [0, 0, 0]
 
 
-def select_menu(menu_num):
+def select_menu(menu_number):
     """
     Print selected menu and increase quantity, totalPrice
-    :param menu_num:
+    :param menu_number:
     :return: none
     """
     global total_Price
-    print(f"{beverage[menu_num]} 주문완료")
-    quantity[menu_num] += 1
-    total_Price += prices[menu_num]
+    print(f"{beverage[menu_number]} 주문완료")
+    quantity[menu_number] += 1
+    total_Price += prices[menu_number]
 def print_recipe():
     print(f"움료\t가격\t수량\t{'소계':>6}\n")
     for i in range(len(beverage)):
