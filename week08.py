@@ -31,6 +31,14 @@ def print_recipe():
                   f"\t{price * amount:>10}\n")
     print(f"최종 금액 {total_Price}")
 
+def print_Recipe():
+    print(f"{"움료":<10}\t{"금액":<4}\t{'수량':>3}\t{'소계':>4}\n")
+    for key,price_amount in beverage_Price_Amount.items():
+        if price_amount[1] != 0:
+            print(f"{key:<15}\t{price_amount[0]:<4}\t{price_amount[1]:>3}"
+                  f"\t{price_amount[0] * price_amount[1]:>10}\n")
+    print(f"최종 금액 {total_Price}")
+
 while True:
     print_menu(keys)
     try:
@@ -46,5 +54,5 @@ while True:
         break
     else:
         select_menu(keys[menu_num-1])
-print_recipe()
+print_Recipe()
 
