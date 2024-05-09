@@ -1,13 +1,14 @@
-# beverage = ['Espresso', 'Compagina', 'Lemonade']
-# prices = [2000, 2500, 3900]
-
-beverage_Price_Amount = {'Espresso':[2000,0],'Compagina':[2500,0],'Lemonade':[3900,0]}
+beverage_Price_Amount = {'Espresso':[2000,0],'Compagina':[2500,0],'Lemonade':[3900,0],'Plain Yogurt':[4500,0]}
+#beverage_Price_Amount = dict(Espresso=[2000,0],Compagina=[2500,0],Lemonade=[3900,0])#no spaces, no reserved word, no korean
 total_Price = 0
-keys = list(beverage_Price_Amount.keys())
+beverage_Price_Amount['Green Tea'] =[4000,0]
+
+
+
 def select_menu(key):
     """
     Print selected menu and increase quantity, totalPrice
-    :param menu_number:
+    :param key:
     :return: none
     """
     global total_Price
@@ -17,28 +18,20 @@ def select_menu(key):
 
 def print_menu(keys):
     i = 0
+    print("-------------------------------")
     for i in range(len(beverage_Price_Amount)):
-        print(f"{i+1}) {keys[i]:<20}{beverage_Price_Amount[keys[i]][0]:<6}")
-    print(f"{len(beverage_Price_Amount)+1}) exit")
-
-def print_recipe():
-    print(f"{"움료":<10}\t{"금액":<4}\t{'수량':>3}\t{'소계':>4}\n")
-    for i in range(len(beverage_Price_Amount)):
-        price = beverage_Price_Amount[keys[i]][0]
-        amount = beverage_Price_Amount[keys[i]][1]
-        if amount != 0:
-            print(f"{keys[i]:<15}\t{price:<4}\t{amount:>3}"
-                  f"\t{price * amount:>10}\n")
-    print(f"최종 금액 {total_Price}")
-
+        print(f"|{i+1}) {keys[i]:<20}{beverage_Price_Amount[keys[i]][0]:<6}|")
+        print("|-----------------------------|")
+    print(f"|{len(beverage_Price_Amount)+1}) exit\t\t\t\t\t  |")
+    print("-------------------------------")
 def print_Recipe():
     print(f"{"움료":<10}\t{"금액":<4}\t{'수량':>3}\t{'소계':>4}\n")
     for key,price_amount in beverage_Price_Amount.items():
         if price_amount[1] != 0:
             print(f"{key:<15}\t{price_amount[0]:<4}\t{price_amount[1]:>3}"
-                  f"\t{price_amount[0] * price_amount[1]:>10}\n")
-    print(f"최종 금액 {total_Price}")
-
+                  f"\t{price_amount[0] * price_amount[1]:>10}원\n")
+    print(f"최종 금액 {total_Price}원")
+keys = list(beverage_Price_Amount.keys())
 while True:
     print_menu(keys)
     try:
