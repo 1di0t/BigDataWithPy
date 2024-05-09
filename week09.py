@@ -1,8 +1,9 @@
+#V1.4
 beverage_Price_Amount = {'Espresso':[2000,0],'Compagina':[2500,0],'Lemonade':[3900,0],'Plain Yogurt':[4500,0]}
 #beverage_Price_Amount = dict(Espresso=[2000,0],Compagina=[2500,0],Lemonade=[3900,0])#no spaces, no reserved word, no korean
 total_Price = 0
-beverage_Price_Amount['Green Tea'] =[4000,0]
-
+others = {'Green Tea':[4000,0]}
+beverage_Price_Amount.update(others)
 
 
 def select_menu(key):
