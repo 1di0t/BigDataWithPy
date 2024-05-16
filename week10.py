@@ -1,6 +1,7 @@
-import tkinter #GUI module
+#from tkinter import * #GUI module
+import tkinter as tk
 
-window = tkinter.Tk()
+window = tk.Tk()
 window.geometry("500x600")
 window.title("키오스크")
 
