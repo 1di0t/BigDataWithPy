@@ -29,12 +29,12 @@ def primeAndOddEven():
 
 
 window = tk.Tk()
-window.geometry("500x200")#Size
+window.geometry("500x600")#Size
 window.title("솟수")
 
 en_input_number = tk.Entry(window)
-lab_print_prime_and_odd_even_num = tk.Label(window,text="소수 판정 프로그램",border=2.4)
-btn_prime_num = tk.Button(window,text="소수 판정",background="orange",border=2.4,command=primeAndOddEven)
+lab_print_prime_and_odd_even_num = tk.Label(window,text="소수 판정 프로그램\n홀짝도 해줘용",border=2.4)
+btn_prime_num = tk.Button(window,height=300,text="소수 판정",background="orange",border=2.4,command=primeAndOddEven)
 
 
 
