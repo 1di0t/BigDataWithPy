@@ -5,6 +5,11 @@ total_Price = 0
 update_beverage = {'Green Tea':[4000,0], 'Plain Yogurt':[3600,0]}
 beverage_Price_Amount.update(update_beverage)
 
+#계절 메뉴 삭제
+#del beverage_Price_Amount['Lemonade']
+beverage_Price_Amount.pop('Lemonade')
+#beverage_Price_Amount.clear()#delete all
+
 
 def select_menu(key):
     """
@@ -41,7 +46,7 @@ while True:
         print("숫자를 입력해주세요")
         continue
 
-    if 0 <= menu_num-1 >= (len(beverage_Price_Amount) + 2):
+    if 0 <= menu_num-1 >= (len(beverage_Price_Amount) + 1):
         print(f"{menu_num}은 존재하지 않는 메뉴입니다")
     elif menu_num == len(beverage_Price_Amount) + 1:
         print("주문확정")
