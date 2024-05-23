@@ -12,9 +12,11 @@ btn_10 = tk.Button(w,text="10")
 btn_11 = tk.Button(w,text="11")
 btn_12 = tk.Button(w,text="12")
 
+
 btn_20 = tk.Button(w,text="20")
 btn_21 = tk.Button(w,text="21")
 btn_22 = tk.Button(w,text="22")
+
 
 btn_00.grid(row=0,column=0)
 btn_01.grid(row=0,column=1)
@@ -27,5 +29,6 @@ btn_11.grid(row=1,column=1)
 btn_20.grid(row=2,column=0,columnspan=2,sticky="WE")
 #btn_21.grid(row=2,column=1)
 #btn_22.grid(row=2,column=2)
+
 
 w.mainloop()
