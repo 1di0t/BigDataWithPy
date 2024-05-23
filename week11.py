@@ -1,8 +1,9 @@
-def soldier(word):
-    def innerfunction():
-        return  f"{word} : 특공!"
-    return  innerfunction
-a = soldier("Sinper")
-b = soldier("Ranger")
-print(a())
-print(b())
+def squares(num):
+    return num*num
+
+def square_numbers(numbers,func):
+    for number in numbers:
+        print(func(number))
+
+numbers = [i for i in range(1,11)]#list compreension
+square_numbers(numbers,squares)
