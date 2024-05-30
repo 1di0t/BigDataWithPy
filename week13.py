@@ -13,8 +13,8 @@ def square_it(func):
         return result * result
     return inner_function
 
-@document_it
 @square_it
+@document_it
 def pow_ints(a,b):
     return pow(a,b)
 
@@ -36,6 +36,6 @@ def is_prime(k) -> bool:
             i = i + 1
         return True
 
-print(pow_ints(2,3))
-print(is_prime(7))
 
+new_pow = square_it(document_it(pow))
+print(new_pow(2,4))
