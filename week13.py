@@ -1,14 +1,14 @@
-#Generator
-def my_range(f=0,length=10,step=1):
-    number = f
-    while number < length:
-        yield number#return number and run next line
-        number += step
+#Decorater
+def document_it(f):
+    def inner_function(*args):
+        print(f"Function Name : {f.__name__}")
+        print(f"위치 기반 리스트 : {args}")
+        print(f"실행 결과 : {f(*args)}")
+        return f(*args)
+    return inner_function
 
-print(my_range)
-r = my_range(1,5)
-print(r)
-for i in r:
-    print(i,end=' ')
-for i in r:
-    print(i,end=' ')
+def pow_ints(a,b):
+    return pow(a,b)
+
+new_add_ints = document_it(pow_ints)#pow_ints 함수를 수정하지 않고 새로운 함수로 만들어줌
+print(new_add_ints(3,3))
