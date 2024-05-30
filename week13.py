@@ -7,9 +7,10 @@ def document_it(f):
         return f(*args)
     return inner_function
 
+@document_it
 def pow_ints(a,b):
     return pow(a,b)
-
+@document_it
 def is_prime(k) -> bool:
     """
 
@@ -27,11 +28,5 @@ def is_prime(k) -> bool:
             i = i + 1
         return True
 
-new_is_prime = document_it(is_prime)
-print(new_is_prime(7))
-
-new_pow = document_it(pow)
-print(new_pow(2,3))
-
-new_add_ints = document_it(pow_ints)#pow_ints 함수를 수정하지 않고 새로운 함수로 만들어줌
-print(new_add_ints(3,3))
+print(pow_ints(2,3))
+print(is_prime(7))
