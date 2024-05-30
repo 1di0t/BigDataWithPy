@@ -7,9 +7,17 @@ def document_it(f):
         return f(*args)
     return inner_function
 
+def square_it(func):
+    def inner_function(*args):
+        result = func(*args)
+        return result * result
+    return inner_function
+
 @document_it
+@square_it
 def pow_ints(a,b):
     return pow(a,b)
+
 @document_it
 def is_prime(k) -> bool:
     """
@@ -30,3 +38,4 @@ def is_prime(k) -> bool:
 
 print(pow_ints(2,3))
 print(is_prime(7))
+
